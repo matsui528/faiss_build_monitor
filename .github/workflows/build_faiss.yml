@@ -11,7 +11,8 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
         python-version: ["3.9", "3.10"] 
-        faiss_label: ["main", "nightly"]
+        faiss-label: ["main", "nightly"]
+        faiss-version: ["1.7.4", "1.7.3"]
           
     steps:
     - name: Checkout
@@ -29,10 +30,10 @@ jobs:
 
     - name: Install dependencies
       run: |
-        if [ "${{ matrix.faiss_label }}" = "main" ]; then
-          conda install -c pytorch faiss-cpu
+        if [ "${{ matrix.faiss-label }}" = "main" ]; then
+          conda install -c pytorch faiss-cpu==${{ matrix.faiss-version }}
         fi
-          conda install -c "pytorch/label/nightly" faiss-cpu 
+          conda install -c "pytorch/label/nightly" faiss-cpu==${{ matrix.faiss-version }} 
 
         
     - name: Run
