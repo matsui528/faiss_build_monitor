@@ -8,7 +8,7 @@ np.__config__.show()
 
 
 print("===== Run simple kmeans =====")
-err = faiss.Kmeans(10, 20).train(numpy.random.rand(1000, 10).astype('float32'))
+err = faiss.Kmeans(10, 20).train(np.random.rand(1000, 10).astype('float32'))
 print(err)
 
 
