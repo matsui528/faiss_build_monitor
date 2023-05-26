@@ -29,8 +29,9 @@ jobs:
     - name: Install dependencies
       run: |
         if [ "${{ matrix.faiss_label }}" = "main" ]; then
-          echo ${{ matrix.faiss_label }}
+          conda install -c pytorch faiss-cpu
         fi
+          conda install -c "pytorch/label/nightly" faiss-cpu 
 
         
     - name: Run
