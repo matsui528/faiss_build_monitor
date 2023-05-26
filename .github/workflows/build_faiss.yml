@@ -13,15 +13,10 @@ jobs:
       max-parallel: 5
       fail-fast: false   # Keep running even if some runs fail
       matrix:
-        os: [windows-latest]
-        python-version: ["3.9"] 
-        faiss-label: ["main"]
-        faiss-version: ["1.7.4"]
-
-#         os: [ubuntu-latest, macos-latest, windows-latest]
-#         python-version: ["3.9", "3.10"] 
-#         faiss-label: ["main", "nightly"]
-#         faiss-version: ["1.7.4", "1.7.3"]
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ["3.9", "3.10"] 
+        faiss-label: ["main", "nightly"]
+        faiss-version: ["1.7.4", "1.7.3"]
           
     steps:
     - name: Checkout
