@@ -3,7 +3,7 @@ name: Build Faiss
 on: [push]
 
 jobs:
-  build-linux:
+  build-faiss:
     runs-on: ${{ matrix.os }}
     strategy:
       max-parallel: 5
