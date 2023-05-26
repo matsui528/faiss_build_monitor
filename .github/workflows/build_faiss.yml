@@ -1,6 +1,10 @@
 name: Build Faiss
 
-on: [push]
+on:
+  push:
+  schedule:
+    # Every Monday, UTC 0:00 (JST 9:00)
+    - cron: 0 0 * * 1
 
 jobs:
   build-faiss:
