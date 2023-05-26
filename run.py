@@ -2,9 +2,9 @@ import faiss
 print("===== faiss version =====")
 print(faiss.__version__)
 
-import numpy
+import numpy as np
 print("===== numpy config =====")
-numpy.__config__.show()
+np.__config__.show()
 
 
 print("===== Run simple kmeans =====")
