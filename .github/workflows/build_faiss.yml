@@ -33,12 +33,12 @@ jobs:
         echo $CONDA/bin >> $GITHUB_PATH
 
     - name: Install faiss ${{ matrix.faiss-version }} for main channel
-      if: faiss-label == 'main'
+      if: matrix.faiss-label == 'main'
       run: |
         conda install -c pytorch faiss-cpu==${{ matrix.faiss-version }}
         
     - name: Install faiss ${{ matrix.faiss-version }} for nightly channel
-      if: faiss-label == 'nightly'
+      if: matrix.faiss-label == 'nightly'
       run: |
         conda install -c "pytorch/label/nightly" faiss-cpu==${{ matrix.faiss-version }} 
        
