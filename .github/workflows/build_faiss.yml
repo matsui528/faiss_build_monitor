@@ -28,13 +28,12 @@ jobs:
         # $CONDA is an environment variable pointing to the root of the miniconda directory
         echo $CONDA/bin >> $GITHUB_PATH
 
-    - name: Install dependencies
+    - name: Install faiss ${{ matrix.faiss-version }} for ${{ matrix.faiss-label }} channel
       run: |
         if [ "${{ matrix.faiss-label }}" = "main" ]; then
           conda install -c pytorch faiss-cpu==${{ matrix.faiss-version }}
         fi
           conda install -c "pytorch/label/nightly" faiss-cpu==${{ matrix.faiss-version }} 
-
         
     - name: Run
       run: |
