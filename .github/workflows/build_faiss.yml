@@ -1,7 +1,9 @@
 name: Build Faiss
 
 on:
-  push:
+  ### Just stop running actions by push
+  # push:
+
   schedule:
     # Every Monday, UTC 0:00 (JST 9:00)
     - cron: 0 0 * * 1
@@ -17,6 +19,14 @@ jobs:
         python-version: ["3.9", "3.10"] 
         faiss-label: ["main", "nightly"]
         faiss-version: ["1.7.4", "1.7.3"]
+        exclude: 
+        - python-version: "3.10"   # Faiss 1.7.3 main on {ubuntu, mac, win} doesn't support py3.10
+          faiss-label: "main"
+          faiss-version: "1.7.3"
+        - os: "windows-latest"    # Faiss 1.7.3 main on win doesn't support py3.9
+          python-version: "3.9"   
+          faiss-label: "main"
+          faiss-version: "1.7.3"
           
     steps:
     - name: Checkout
