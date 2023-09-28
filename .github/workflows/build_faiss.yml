@@ -2,11 +2,15 @@ name: Build Faiss
 
 on:
   ### Just stop running actions by push
-  # push:
+  #push:
 
-  schedule:
-    # Every Monday, UTC 0:00 (JST 9:00)
-    - cron: 0 0 * * 1
+  ### Manual trigger
+  workflow_dispatch:
+
+  ### Trigger every week
+  # schedule:
+  #   # Every Monday, UTC 0:00 (JST 9:00)
+  #   - cron: 0 0 * * 1
 
 jobs:
   build-faiss:
