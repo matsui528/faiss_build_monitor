@@ -19,8 +19,7 @@ Try the following combination of the configuration.
   - main
   - nightly
 - faiss-version
-  - 1.7.3
-  - 1.7.4
+  - 1.8.0
 
 
 ## Todo
