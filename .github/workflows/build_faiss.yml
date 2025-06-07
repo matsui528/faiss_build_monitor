@@ -20,9 +20,9 @@ jobs:
       fail-fast: false   # Keep running even if some runs fail
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        python-version: ["3.9", "3.10"] 
+        python-version: ["3.10", "3.11", "3.12"] 
         faiss-label: ["main", "nightly"]
-        faiss-version: ["1.8.0"]
+        faiss-version: ["1.11.0"]
         # exclude: 
         # - python-version: "3.10"   # Faiss 1.7.3 main on {ubuntu, mac, win} doesn't support py3.10
         #   faiss-label: "main"
