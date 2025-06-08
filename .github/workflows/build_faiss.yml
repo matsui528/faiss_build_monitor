@@ -51,11 +51,11 @@ jobs:
         gcc -v
         conda install -c pytorch faiss-cpu==${{ matrix.faiss-version }}
         
-    # - name: Install faiss ${{ matrix.faiss-version }} for nightly channel
-    #   shell: bash -l {0}    # to activate conda
-    #   if: matrix.faiss-label == 'nightly'
-    #   run: |
-    #     conda install -c "pytorch/label/nightly" faiss-cpu==${{ matrix.faiss-version }} 
+    - name: Install faiss ${{ matrix.faiss-version }} for nightly channel
+      shell: bash -l {0}    # to activate conda
+      if: matrix.faiss-label == 'nightly'
+      run: |
+        conda install -c "pytorch/label/nightly" faiss-cpu==${{ matrix.faiss-version }} 
        
     - name: Run
       shell: bash -l {0}    # to activate conda
