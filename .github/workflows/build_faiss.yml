@@ -48,6 +48,7 @@ jobs:
       shell: bash -l {0}    # to activate conda
       if: matrix.faiss-label == 'main'
       run: |
+        conda install -c conda-forge gcc_linux-64=14   # libgcc>14 is required for faiss?
         gcc -v
         conda install -c pytorch faiss-cpu==${{ matrix.faiss-version }}
         
