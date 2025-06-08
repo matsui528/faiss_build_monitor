@@ -2,7 +2,7 @@ name: Build Faiss
 
 on:
   ### Just stop running actions by push
-  #push:
+  push:
 
   ### Manual trigger
   workflow_dispatch:
